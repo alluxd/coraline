@@ -1,0 +1,6 @@
+{
+    "Err1": "An error occured!",
+    "GUILD_ALREADY_HAS_TAGS": "This server already has tags enabled!",
+    "GUILD_TAGS_DISABLED": "This server's tags are already disabled! ",
+    "GUILD_DOESNT_HAVE_TAGS": "Tags are turned off for this server by the administratrors."
+}
