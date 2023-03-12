@@ -62,6 +62,14 @@ module.exports = {
 
       const { Listening, Competing, Watching, Streaming, Playing } = ActivityType;
 
+      const embedA = new EmbedBuilder()
+      .setTitle("✅ Presence updated.")
+      .setDescription(`The bot's ${sub} has been updated to: **${type}: ${activity}**`)
+      .setColor("Green")
+
+      
+
+
         try {
             switch (sub) {
                 case 'activity':
@@ -93,13 +101,6 @@ module.exports = {
 
 
 
-        const embed = new EmbedBuilder()
-        .setTitle("✅ Presence updated.")
-        .setDescription(`The bot's ${sub} has been updated to: ${type}.`)
-        .setColor("Green")
-
-        return await interaction.reply({
-            embeds: [embed]
-        })
+        
     }
 };
