@@ -57,15 +57,12 @@ module.exports = {
         const sub = options.getSubcommand(['activity', 'status'])
 
         const type = options.getString('type')
-        const activity = options.getString('activity')
+        let activity = options.getString('activity')
       //  const activityText = options.getString('activity-text')
 
       const { Listening, Competing, Watching, Streaming, Playing } = ActivityType;
 
-      const embedA = new EmbedBuilder()
-      .setTitle("✅ Presence updated.")
-      .setDescription(`The bot's ${sub} has been updated to: **${type}: ${activity}**`)
-      .setColor("Green")
+     
 
       
 
@@ -99,7 +96,15 @@ module.exports = {
         }
 
 
+        if(activity === null) activity = 'Nothing'
 
+
+        const embedA = new EmbedBuilder()
+        .setTitle("✅ Presence updated.")
+        .setDescription(`The bot's ${sub} has been updated to: **${type}: ${activity}**`)
+        .setColor("Green")
+
+        return await interaction.reply({ embeds: [embedA]})
 
         
     }
